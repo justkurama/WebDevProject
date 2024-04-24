@@ -42,7 +42,7 @@ app-heading {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
-    minmax(240px, 1fr)
+    minmax(350px, 1fr)
   ); /* Adapts the number of columns based on the width of the cards and the container */
   row-gap: 10px; /* Reduces space between rows to 10px */
   padding: 20px; /* Padding around the grid */
@@ -76,7 +76,8 @@ app-heading {
 }
 
 .card {
-  height: 400px; /* Fixed height */
+  height: 420px;
+  width: 300px; /* Fixed height */
 }
 
 .card-body {
