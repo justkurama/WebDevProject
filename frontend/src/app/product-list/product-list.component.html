@@ -1,0 +1,122 @@
+<app-heading></app-heading>
+
+<div class="sidebar-section">
+  <div class="categories">
+    <h1 class="text-2xl text-[#2e4536] font-medium">Category</h1>
+    <hr class="mt-2 mb-2" />
+
+    <button
+      *ngFor="let category of categories"
+      (click)="filterByCategory(category.name)"
+      class="btn mr-2 btn-outline text-[#2e4536] hover:bg-[#9AE6B4]"
+    >
+      {{ category.name }}
+    </button>
+  </div>
+  <div>
+    <label class="text-2xl text-[#2e4536] font-medium">Price Range:</label>
+    <hr class="mt-2 mb-2" />
+
+    <ngx-slider
+      [(value)]="minPrice"
+      [(highValue)]="maxPrice"
+      [options]="options"
+    ></ngx-slider>
+
+    <div class="flex justify-between">
+      <span>${{ minPrice }}</span>
+      <span>${{ maxPrice }}</span>
+    </div>
+    <label class="text-2xl text-[#2e4536] font-medium mt-2">Rating:</label>
+    <hr class="mt-2 mb-2" />
+    <select
+      [(ngModel)]="selectedRating"
+      class="select select-bordered bg-white w-full mb-2"
+    >
+      <option value="">All Ratings</option>
+      <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">
+        {{ r }} Stars
+      </option>
+    </select>
+    <button
+      class="btn btn-outline text-[#2e4536] hover:bg-[#9AE6B4] flex justify-center items-center"
+      (click)="applyFilters()"
+    >
+      Apply
+    </button>
+  </div>
+
+  <div class="sort">
+    <h1 class="text-2xl text-[#2e4536] font-medium">Sort</h1>
+    <hr class="mt-2 mb-2" />
+    <button class="btn btn-outline text-[#2e4536] hover:bg-[#9AE6B4]">
+      Recommended
+    </button>
+    <button class="btn btn-outline text-[#2e4536] hover:bg-[#9AE6B4]">
+      What's New?
+    </button>
+    <button
+      class="btn btn-outline text-[#2e4536] hover:bg-[#9AE6B4]"
+      (click)="sortByPrice('desc')"
+    >
+      Price high to low
+    </button>
+    <button
+      class="btn btn-outline text-[#2e4536] hover:bg-[#9AE6B4]"
+      (click)="sortByPrice('asc')"
+    >
+      Price low to high
+    </button>
+  </div>
+</div>
+
+<div class="product-list" style="background-image: url('C:\Users\User\Desktop\WebDevProject\frontend\src\assets\bg.jpg');">
+
+  <button
+    *ngIf="isLoggedIn"
+    class="btn adding-item-button bg-[#9AE6B4] text-black border-none hover:bg-[#2e4536] hover:text-white"
+    [routerLink]="['/addproduct']"
+  >
+    Add item +
+  </button>
+  <div class="products ml-10 xl:ml-6">
+    <div
+      *ngFor="let product of products"
+      class="card card-compact w-60 shadow-xl bg-white"
+    >
+      <figure>
+        <img [src]="product.image" alt="{{ product.name }}" />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price | currency }}</p>
+        <div class="card-actions justify-end items-center">
+          <div class="rating mr-2">
+            <span
+              *ngFor="let star of getRatingStars(product.rating); let i = index"
+            >
+              <input
+                type="radio"
+                name="rating-2"
+                class="mask mask-star-2 bg-orange-400"
+              />
+            </span>
+
+            <span
+              *ngFor="let empty of getEmptyStars(product.rating); let i = index"
+            >
+              <input type="radio" name="rating-2" class="mask mask-star-2" />
+            </span>
+          </div>
+          <a
+            class="btn btn-outline text-[#2e4536] hover:bg-[#9AE6B4]"
+            [routerLink]="['/products', product.id]"
+          >
+            Details
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

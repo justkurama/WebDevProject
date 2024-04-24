@@ -1,0 +1,23 @@
+.heading {
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(to right, #9AE6B4, #f7f79f);
+  display: flex;
+  align-items: center;
+  justify-content: space-around; 
+  padding: 0 30px; 
+}
+
+.logoimage {
+  width: 100px; /* Adjusted for better proportionality */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.search-box {
+  flex-grow: 1; /* Allows the search bar to take up available space */
+  margin: 0 300px; /* Adds some margin for spacing */
+}
+
+.buttons-heading {
+  margin-left: 30px; /* Adds spacing between buttons */
+}

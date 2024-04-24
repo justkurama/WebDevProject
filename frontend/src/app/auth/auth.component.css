@@ -1,0 +1,53 @@
+@font-face {
+  font-family: AuthFont;
+  src: url("C:/Users/User/Desktop/WebDevProject/frontend/src/app/auth/nexa-script-heavy.ttf");
+}
+
+.authcontent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('C:/Users/User/Desktop/WebDevProject/frontend/src/assets/asd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+.centeringtextingsection {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NamingAuth {
+  font-family: "AuthFont";
+  font-size: 4rem;
+}
+
+.textingsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.signinsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.signupsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+

@@ -1,0 +1,110 @@
+<app-heading></app-heading>
+<div class="product-detail-heading" *ngIf="category">
+  <h1 class="category-title text-[#7bb890]">{{ category.name }} Collection</h1>
+</div>
+
+<div class="product-details" *ngIf="product">
+  <figure>
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+  </figure>
+  <div class="product-detail-text">
+    <h1 class="product-name text-[#2e4536]"><strong>{{ product.name }}</strong></h1>
+    <p class="product-price text-[#2e4536] text-xl">
+      {{ product.price | currency }}
+    </p>
+    <p class="product-description">{{ product.description }}</p>
+
+    <p class="product-brand mb-4">
+      <strong>Brand: </strong>{{ product.brand }}
+    </p>
+    <div class="product-rating">
+      <div class="rating mr-2">
+        <span
+          *ngFor="let star of getRatingStars(product.rating); let i = index"
+        >
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400"
+          />
+        </span>
+
+        <span
+          *ngFor="let empty of getEmptyStars(product.rating); let i = index"
+        >
+          <input type="radio" name="rating-2" class="mask mask-star-2" />
+        </span>
+      </div>
+    </div>
+    <button
+      class="btn bg-green-500 border-none hover:bg-green-600 text-white mt-4 flex w-full"
+      (click)="product && addToCart(product.id)"
+    >
+      Add to Bag
+    </button>
+    <div
+      *ngIf="isLoggedIn"
+      class="mt-2 w-full flex justify-center items-center"
+    >
+      <button
+        class="btn text-white btn-primary mr-4"
+        [routerLink]="['/updateproduct', product.id]"
+      >
+        Update
+      </button>
+      <button class="btn text-white btn-error ml-4" (click)="deleteProduct()">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center h-96">
+  <div *ngIf="isLoggedIn" class="review-form">
+    <h3 class="text-xl text-[#7bb890]">Write a Review</h3>
+    <form (ngSubmit)="submitReview()">
+      <textarea
+        [(ngModel)]="reviewContent"
+        name="content"
+        rows="4"
+        placeholder="Enter your review here..."
+        required
+        class="w-full p-2 border bg-white"
+      ></textarea>
+      <label for="rating" class="text-[#7bb890] text-xl">Rating:</label>
+      <select
+        [(ngModel)]="reviewRating"
+        name="rating"
+        required
+        class="p-2 border"
+      >
+        <option value="">Select a rating</option>
+        <option *ngFor="let num of [1, 2, 3, 4, 5]" [value]="num">
+          {{ num }}
+        </option>
+      </select>
+      <button type="submit" class="btn text-[#2e4536] hover:bg-[#9AE6B4] ml-52">
+        Submit Review
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="reviews.length > 0" class="review-section">
+    <h2 class="text-3xl text-[#7bb890]">Reviews</h2>
+    <div *ngFor="let review of reviews" class="review-item">
+      <p>{{ review.content }}</p>
+      <div class="rating">
+        <span *ngFor="let star of getRatingStars(review.rating); let i = index">
+          <input
+            type="radio"
+            name="rating-2"
+            class="mask mask-star-2 bg-orange-400"
+          />
+        </span>
+        <span *ngFor="let empty of getEmptyStars(review.rating); let i = index">
+          <input type="radio" name="rating-2" class="mask mask-star-2" />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

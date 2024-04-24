@@ -1,0 +1,147 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+app-heading {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(202, 31, 31, 0.1);
+}
+
+.sidebar-section {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 20%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.categories {
+  margin-bottom: 20px;
+}
+
+.price-range {
+  margin-bottom: 20px;
+}
+
+.sort button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(240px, 1fr)
+  ); /* Adapts the number of columns based on the width of the cards and the container */
+  row-gap: 10px; /* Reduces space between rows to 10px */
+  padding: 20px; /* Padding around the grid */
+  align-items: start; /* Aligns items at the start of each cell */
+}
+
+.product-list {
+  position: relative;
+  margin-left: 20%; /* Adjust based on sidebar width */
+  padding-top: 160px; /* Adjust if app-heading height changes */
+  background-color: #fff; /* Ensures consistent background */
+  min-height: calc(100vh - 100px); /* Full height minus the header */
+}
+
+.adding-item-button {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 10px;
+
+  margin-left: 90%;
+}
+
+@media (min-width: 1280px) {
+  .adding-item-button {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    margin-left: 85%;
+  }
+}
+
+.card {
+  height: 400px; /* Fixed height */
+}
+
+.card-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
+  height: 70px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  overflow-y: auto;
+}
+
+.card p {
+  font-size: 16px;
+  height: 30px; /* Set a fixed height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  margin-bottom: 10px; /* Adds some space below the paragraph */
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: #6cff0a #f0f0f0; /* Customizes scrollbar with brand colors */
+}
+
+.card-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Style for scrollbars in WebKit browsers */
+.card p::-webkit-scrollbar {
+  width: 2px; /* Narrow scrollbar for neat design */
+}
+
+.card p::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light grey track */
+}
+
+.card p::-webkit-scrollbar-thumb {
+  background-color: #19ac5b; /* Thumb color matches primary theme */
+  border-radius: 10px;
+}
+.app-heading {
+  background-color: #f9fbe7; /* Soft green */
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.1); /* Soft green shadow */
+}
+
+.sidebar-section {
+  background-color: #daf9b6; /* Light green */
+}
+
+.card p::-webkit-scrollbar-thumb {
+  background-color: #ffd54f; /* Yellow */
+}
+.app-heading {
+  color: #263238; /* Dark grey for better contrast */
+}
+
+.sidebar-section {
+  color: #263238; /* Dark grey for better contrast */
+}
+
+.card p {
+  color: #263238; /* Dark grey for better contrast */
+}
+

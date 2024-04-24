@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #e38989, #fff);
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.Cart-Container {
+  width: 900px;
+  height: 600px;
+  overflow-y: auto;
+
+  background-color: #f1f7f7;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 50px;
+}
+
+.Header {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  list-style: none;
+}
+
+.Product-Container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.Product-Image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.Product-Details {
+  flex-grow: 1;
+}
+
+.Product-Name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.Product-Description {
+  margin-bottom: 20px;
+}
+
+.Product-Price {
+  font-weight: bold;
+}
+
+.Product-Quantity {
+  margin-top: 10px;
+}
+
+.Quantity-Input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.Remove-Button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Remove-Button:hover {
+  background-color: #c0392b;
+}

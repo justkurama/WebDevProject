@@ -1,0 +1,46 @@
+<app-heading></app-heading>
+
+<body>
+  <div *ngIf="isLoggedIn">
+    <div *ngIf="cart" class="Cart-Container">
+      <div class="Header">
+        <h2 class="Heading">Your Cart</h2>
+      </div>
+      <ul>
+        <li
+          *ngFor="let item of cart.enrichedItems"
+          class="cart-item flex justify-center items-center mb-4 mt-4"
+        >
+          <div class="Product-Container">
+            <img
+              [src]="item.product.image"
+              alt="Product Image"
+              class="Product-Image"
+            />
+            <div class="Product-Details">
+              <h3 class="Product-Name">{{ item.product.name }}</h3>
+              <p class="Product-Description">{{ item.product.description }}</p>
+              <p class="Product-Price">Price: ${{ item.product.price }}</p>
+              <div class="Product-Quantity">
+                <label>Quantity:</label>
+                <input
+                  class="Quantity-Input bg-white"
+                  type="number"
+                  [(ngModel)]="item.quantity"
+                  (change)="updateQuantity(item, item.quantity)"
+                />
+              </div>
+              <button (click)="removeItem(item.id)" class="Remove-Button">
+                Remove
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoggedIn">
+    <h1>Login to check your cart</h1>
+  </div>
+</body>
