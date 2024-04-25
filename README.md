@@ -1,4 +1,8 @@
-# Final Project Web Development
+# Web Development Project
+
+---
+![Hello](luffy.jpg)
+---
 
 This is a web application built using Django for the backend and Angular for the frontend.
 
