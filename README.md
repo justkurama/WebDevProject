@@ -11,6 +11,7 @@ This is a web application built using Django for the backend and Angular for the
 ## Team members
 
 Tolebayev Kurmanbek `22B030597`
+Alimbetova Ayazhan `22B030500`
 
 ## Features
 
