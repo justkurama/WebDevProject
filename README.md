@@ -1,10 +1,18 @@
-# Final Project Web Development
+# Web Development Project
+
+---
+![Hello](luffy.jpg)
+---
 
 This is a web application built using Django for the backend and Angular for the frontend.
 
 ## Description
 
 This application allows users to browse and purchase products from different categories. It includes user authentication and authorization features for secure access to the platform.
+
+## Team members
+
+Tolebayev Kurmanbek `22B030597`
 
 ## Features
 
@@ -56,11 +64,3 @@ This application allows users to browse and purchase products from different cat
 ## Contributing
 
 Contributions are welcome! Please follow the standard GitHub flow: fork the repository, create a new branch, make your changes, and open a pull request.
-
-## License
-
-[Choose an appropriate license for your project and mention it here.]
-
----
-
-Feel free to customize this README file according to your project's specific details and requirements!
