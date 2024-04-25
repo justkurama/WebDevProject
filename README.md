@@ -4,11 +4,9 @@
 ![Hello](luffy.jpg)
 ---
 
-This is a web application built using Django for the backend and Angular for the frontend.
-
 ## Description
 
-This application allows users to browse and purchase products from different categories. It includes user authentication and authorization features for secure access to the platform.
+This is a web application built using Django for the backend and Angular for the frontend. This application allows users to browse and purchase products from different categories. It includes user authentication and authorization features for secure access to the platform.
 
 ## Team members
 
