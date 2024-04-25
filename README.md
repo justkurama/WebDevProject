@@ -60,11 +60,3 @@ Tolebayev Kurmanbek `22B030597`
 ## Contributing
 
 Contributions are welcome! Please follow the standard GitHub flow: fork the repository, create a new branch, make your changes, and open a pull request.
-
-## License
-
-[Choose an appropriate license for your project and mention it here.]
-
----
-
-Feel free to customize this README file according to your project's specific details and requirements!
