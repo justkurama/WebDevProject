@@ -6,6 +6,10 @@ This is a web application built using Django for the backend and Angular for the
 
 This application allows users to browse and purchase products from different categories. It includes user authentication and authorization features for secure access to the platform.
 
+## Team members
+
+Tolebayev Kurmanbek `22B030597`
+
 ## Features
 
 - User authentication and authorization
